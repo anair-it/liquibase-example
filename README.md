@@ -44,7 +44,7 @@ This project expects the following values to be passed in as JVM args:
 * LOG_LEVEL(Optional) - Keep it at INFO. Change if required         
 
 
-To generate dbDoc and print update sqls and rollback sql:                  
+To generate dbDoc and print update sqls:                  
 	
 	mvn -DLOG_LEVEL=INFO -DDB_CONTEXT=local -DDB_USERNAME=MOVIE -DDB_PASSWORD=MOVIE -DDB_SCHEMA=MOVIE -DDB_URL=jdbc:oracle:thin:@localhost:1521:xe liquibase:updateSQL liquibase:dbDoc
 
