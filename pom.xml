@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.anair.database</groupId>
+	<artifactId>liquido</artifactId>
+	<version>0.0.3</version>
+
+	<name>liquibase example</name>
+	<description>Database refactoring using liquibase - Example based on Oracle database</description>
+
+	<developers>
+		<developer>
+			<name>Anoop Nair</name>
+			<email>anoopnair.it@gmail.com</email>
+		</developer>
+	</developers>
+	
+	<properties>
+		<liquibase.plugin.version>3.3.1</liquibase.plugin.version>
+		<oracle.client.version>11.2.0.1.0</oracle.client.version>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.plugin.version}</version>
+				<configuration>
+					<changeLogFile>src/main/resources/master-changelog.xml</changeLogFile>
+					<driver>oracle.jdbc.OracleDriver</driver>
+					<url>${DB_URL}</url>
+					<username>${DB_USERNAME}</username>
+					<password>${DB_PASSWORD}</password>
+					<defaultSchemaName>${DB_SCHEMA}</defaultSchemaName>
+					<contexts>${DB_CONTEXT}</contexts>
+					<logLevel>${LOG_LEVEL}</logLevel>
+					<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+					<tag>${project.version}</tag>
+					<migrationSqlOutputFile>target/liquibase/migration.sql</migrationSqlOutputFile>
+					<outputFile>target/liquibase/rollback.sql</outputFile>
+					<rollbackCount>${ROLLBACK_COUNT}</rollbackCount>
+					<rollbackTag>${ROLLBACK_TAG}</rollbackTag>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.oracle.jdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>${oracle.client.version}</version>
+		</dependency>
+	</dependencies>
+</project>
