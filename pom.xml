@@ -7,7 +7,7 @@
 	<version>0.0.3</version>
 
 	<name>liquibase example</name>
-	<description>Database refactoring using liquibase - Example based on Oracle database</description>
+	<description>Database refactoring using liquibase - Example based on Oracle 11g</description>
 
 	<developers>
 		<developer>
@@ -17,8 +17,8 @@
 	</developers>
 	
 	<properties>
-		<liquibase.plugin.version>3.3.1</liquibase.plugin.version>
-		<oracle.client.version>11.2.0.1.0</oracle.client.version>
+		<liquibase.plugin.version>3.5.3</liquibase.plugin.version>
+		<oracle.client.version>##replace version##</oracle.client.version>
 	</properties>
 
 	<build>

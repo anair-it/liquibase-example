@@ -11,15 +11,14 @@ Reference
 
 Prerequisites
 --------
-1. JDK 6+
-2. Maven 3+
-3. Git     
-4. Oracle 11g database          
+1. Maven 3+
+2. Oracle 12c database          
+3. Oralce 12c client jar
 
 Versions used
 -----
-- Liquibase maven plugin: 3.3.1         
-	- Liquibase core: 3.3.0                
+- Liquibase maven plugin: 3.5.x         
+	- Liquibase core: 3.5.x                
 - Oracle client: 11.2.0.1.0       
 
 Database setup
@@ -28,7 +27,6 @@ Database setup
 2. Create a schema and name it anything. In this project we'll assume the schema name as "MOVIE"     
 3. Create a user "MOVIE_APP_USER" that will have select, update, insert, delete table access         
 4. Create a user "MOVIE_RO" that will have select table access           
-
      	       
 Maven commands and inputs
 -----------
